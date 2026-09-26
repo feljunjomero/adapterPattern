@@ -1,18 +1,24 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
 ## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
+The workspace contains two folders, where:
+- `src`: the folder where the adapter pattern java files are
 - `lib`: the folder to maintain dependencies
+Meanwhile, the compiled output files or classes are in the `bin` folder.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Plugging Devices into Power Outlets
+You are developing an application that helps users manage and control various electronic devices by plugging them into power outlets. Each device has different plug types, voltage, and amperage requirements. To ensure compatibility and safety, you need to create adapters for different devices to allow them to be plugged into standard power outlets.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Adaptee Objects:
+    Laptop - Represents a laptop device that needs to be plugged into a power source. It has the charge() method.
+    Refrigerator - Represents a refrigerator device that requires a power source. It has the startCooling() method.
+    SmartphoneCharger - Represents a smartphone charger that needs to be plugged in for charging. It has the chargePhone() method.
 
-## Dependency Management
+Target Object:
+    PowerOutlet - Represents a standard power outlet with a common interface for plugging in devices. It defines the plugIn() method as the target method.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Adapter Objects:
+    LaptopAdapter - An adapter for plugging a laptop into a standard power outlet. It adapts the Laptop to the PowerOutlet interface, translating plugIn() to charge().
+    RefrigeratorAdapter - An adapter for plugging a refrigerator into a standard power outlet. It adapts the Refrigerator to the PowerOutlet interface, translating plugIn() to startCooling().
+    SmartphoneAdapter - An adapter for plugging a smartphone charger into a standard power outlet. It adapts the SmartphoneCharger to the PowerOutlet interface, translating plugIn() to chargePhone().
+
+## UML CLASS DIAGRAM
+
